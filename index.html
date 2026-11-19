@@ -6,220 +6,199 @@
 <title>KI-Führerschein – Gymnasium Dresden-Pieschen (Entwurf)</title>
 <style>
 :root {
-  --grau: #5c6e77;        /* Schiefergrau aus Logo und Navigation */
-  --grau-dunkel: #2f3a40;
-  --grau-hell: #eef1f2;
-  --gruen: #a9c14f;       /* Grün aus dem Logo */
-  --gruen-hell: #eef4d9;
-  --gelb: #eab84c;        /* Gelb-Orange aus dem Logo */
-  --gelb-hell: #fcf3dc;
-  --orange: #dd9933;      /* Akzentfarbe der Schulwebseite */
-  --rot: #c0392b;
-  --weiss: #ffffff;
-  --rand: #d6dcdf;
-  --radius: 12px;
+  --bg: #f3f5f6; --tinte: #232d32; --grau: #5c6e77; --grau-h: #e6ebed;
+  --gruen: #a9c14f; --gruen-h: #e9f0cf; --gruen-d: #5e7a12;
+  --gelb: #eab84c; --gelb-h: #fbefcf; --orange: #dd9933; --orange-h: #f8e3c2;
+  --rot: #c0392b; --r: 26px; --r2: 16px;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body {
-  margin: 0; background: var(--weiss); color: var(--grau-dunkel);
-  font-family: "PT Sans", "Segoe UI", system-ui, sans-serif; font-size: 17px; line-height: 1.5;
-}
-h1, h2, h3, h4 { line-height: 1.2; margin: 0 0 .5em; color: var(--grau-dunkel); }
-h1 { font-size: clamp(1.8rem, 4.5vw, 2.8rem); }
-h2 { font-size: 1.5rem; margin-top: 1.6em; }
-h3 { font-size: 1.15rem; }
+body { margin: 0; background: var(--bg); color: var(--tinte); font-family: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, sans-serif; font-size: 17px; line-height: 1.5; }
+h1, h2, h3 { line-height: 1.15; margin: 0 0 .5em; letter-spacing: -.01em; }
+h1 { font-size: clamp(2rem, 4.6vw, 3.1rem); letter-spacing: -.02em; }
+h2 { font-size: 1.35rem; margin: 34px 4px 14px; }
+h3 { font-size: 1.12rem; }
 p { margin: 0 0 .8em; }
-a { color: #8a5a10; }
-button { font: inherit; cursor: pointer; }
-.wrap { max-width: 1060px; margin: 0 auto; padding: 0 16px; }
+a { color: var(--tinte); }
+button { font: inherit; cursor: pointer; color: inherit; }
+.wrap { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+main { min-height: 60vh; padding-bottom: 20px; }
 
 /* Kopf */
-.kopf { background: var(--weiss); }
-.kopf .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 8px; padding-bottom: 8px; flex-wrap: wrap; }
-.marke b { display: block; font-size: 1.7rem; letter-spacing: .06em; text-transform: uppercase; color: var(--grau-dunkel); line-height: 1.1; }
-.marke small { color: var(--grau); font-size: .95rem; }
-.entwurf { font-size: 2rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--rot); border: 4px solid var(--rot); border-radius: 10px; padding: 0 14px; transform: rotate(-3deg); }
-.entwurf.klein { display: inline-block; font-size: .8rem; border-width: 2px; padding: 0 6px; transform: none; vertical-align: middle; letter-spacing: .1em; }
-.band { background: var(--gelb); color: var(--grau-dunkel); text-align: center; font-weight: 700; padding: 6px 16px; }
-.kachel { width: 62px; height: 62px; border-radius: 10px; background: var(--grau); color: #fff; display: grid; place-items: center; font-weight: 700; font-size: 1.5rem; flex: none; }
-footer button { background: none; border: 0; color: var(--gelb); text-decoration: underline; padding: 0; }
-nav.haupt { background: var(--grau); position: sticky; top: 0; z-index: 5; }
-nav.haupt .wrap { display: flex; gap: 2px; flex-wrap: wrap; }
-nav.haupt button {
-  background: none; border: 0; color: #fff; padding: 11px 11px; white-space: nowrap; border-bottom: 4px solid transparent;
-}
-nav.haupt button:hover { background: rgba(255,255,255,.1); }
-nav.haupt button[aria-current="page"] { color: var(--gelb); border-bottom-color: var(--gelb); font-weight: 700; }
+.kopf .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 16px; padding-bottom: 12px; flex-wrap: wrap; }
+.marke { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 1.2rem; }
+.marke i { width: 40px; height: 40px; border-radius: 12px; background: conic-gradient(from 210deg, var(--grau) 0 33%, var(--gruen) 0 66%, var(--gelb) 0); flex: none; }
+.marke small { display: block; font-weight: 400; font-size: .82rem; color: var(--grau); }
+.entwurf { font-size: 1.5rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--rot); border: 3px solid var(--rot); border-radius: 12px; padding: 0 12px; transform: rotate(-3deg); }
+.entwurf.klein { display: inline-block; font-size: .72rem; border-width: 2px; border-radius: 6px; padding: 0 6px; transform: none; vertical-align: middle; letter-spacing: .1em; }
+.band { max-width: 1100px; margin: 0 auto 12px; background: var(--gelb); border-radius: var(--r2); text-align: center; font-weight: 700; font-size: .92rem; padding: 7px 16px; }
+nav.haupt { position: sticky; top: 0; z-index: 5; padding: 6px 0; background: linear-gradient(var(--bg) 75%, transparent); }
+nav.haupt .wrap { display: flex; }
+#nav { display: flex; gap: 4px; background: #fff; border-radius: 22px; padding: 5px; flex-wrap: wrap; box-shadow: 0 1px 6px rgba(35,45,50,.08); }
+#nav button { background: none; border: 0; color: var(--grau); padding: 7px 15px; border-radius: 99px; white-space: nowrap; font-size: .93rem; }
+#nav button:hover { background: var(--bg); }
+#nav button[aria-current="page"] { background: var(--tinte); color: #fff; font-weight: 600; }
+footer { margin-top: 30px; color: var(--grau); padding: 18px 0 30px; font-size: .88rem; text-align: center; }
+footer button { background: none; border: 0; text-decoration: underline; padding: 0; color: var(--tinte); }
 
-/* Start */
-.held { background: linear-gradient(120deg, var(--gruen) 0%, #c3d67c 100%); padding: 36px 0 30px; }
-.held p { font-size: 1.15rem; max-width: 38em; }
-.knopf {
-  display: inline-block; background: var(--grau); color: #fff; border: 0; border-radius: 99px; padding: 10px 22px; font-weight: 700;
-  text-decoration: none;
-}
-.knopf:hover { background: var(--grau-dunkel); }
-.knopf.hell { background: #fff; color: var(--grau-dunkel); border: 2px solid var(--grau); }
-.knopf.klein { padding: 6px 14px; font-size: .92rem; }
-.knopf:disabled { opacity: .5; cursor: default; }
+/* Kacheln */
+.bento { display: grid; grid-template-columns: repeat(12, 1fr); gap: 14px; margin-top: 10px; }
+.t { border-radius: var(--r); padding: 24px; background: #fff; border: 0; text-align: left; display: block; }
+.t.held { grid-column: span 8; background: var(--tinte); color: #fff; display: flex; flex-direction: column; justify-content: space-between; gap: 26px; min-height: 300px; }
+.t.held small { color: var(--gruen); font-weight: 700; letter-spacing: .1em; font-size: .78rem; }
+.t.held h1 { margin: 8px 0 12px; }
+.t.held p { color: #c5ced2; max-width: 34em; margin: 0; }
+.t.minischein { grid-column: span 4; background: linear-gradient(150deg, var(--gruen-h), var(--gelb-h)); display: flex; flex-direction: column; }
+.t.minischein:hover, .t.kl:hover { box-shadow: 0 0 0 3px var(--tinte); }
+.minischein small { letter-spacing: .12em; font-weight: 700; font-size: .8rem; }
+.minischein .name { font-size: 1.5rem; font-weight: 700; margin: 6px 0 auto; }
+.minischein .stp { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 20px; }
+.minischein .stp span { aspect-ratio: 1; border-radius: var(--r2); display: grid; place-items: center; font-weight: 700; font-size: 1.3rem; border: 2px dashed var(--grau); color: var(--grau); }
+.minischein .stp .ok { background: var(--tinte); color: var(--gruen); border: 0; }
+.t.kl { grid-column: span 3; display: flex; flex-direction: column; gap: 6px; min-height: 250px; }
+.kl.A, .klkopf.A { background: var(--gruen-h); } .kl.B, .klkopf.B { background: var(--gelb-h); }
+.kl.C, .klkopf.C { background: var(--orange-h); } .kl.D, .klkopf.D { background: var(--grau-h); }
+.kl .emoji { font-size: 2.1rem; line-height: 1; } .kl b { font-size: 1.15rem; line-height: 1.2; } .kl .st { color: var(--grau); font-size: .88rem; }
+.kl .text { font-size: .92rem; margin-top: auto; }
+.balken { height: 8px; background: rgba(35,45,50,.12); border-radius: 99px; overflow: hidden; margin-top: 4px; display: block; }
+.balken i { display: block; height: 100%; background: var(--tinte); border-radius: 99px; }
+.chip { align-self: flex-start; display: inline-block; background: rgba(35,45,50,.1); border-radius: 99px; padding: 3px 12px; font-size: .82rem; font-weight: 600; }
+.chip.ok { background: var(--tinte); color: var(--gruen); }
+.t.breit { grid-column: span 7; } .t.schmal { grid-column: span 5; }
+.t h2 { margin: 0 0 14px; font-size: 1.2rem; }
+.ablauf { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; counter-reset: s; padding: 0; margin: 0; list-style: none; }
+.ablauf li { background: var(--bg); border-radius: var(--r2); padding: 14px; counter-increment: s; font-size: .93rem; }
+.ablauf li::before { content: counter(s); display: grid; place-items: center; width: 30px; height: 30px; border-radius: 10px; background: var(--tinte); color: #fff; font-weight: 700; margin-bottom: 8px; }
+.ablauf b { display: block; font-size: 1rem; }
+.regeln { display: grid; gap: 8px; }
+.regel { display: grid; grid-template-columns: 40px 1fr; gap: 2px 12px; align-items: center; background: var(--bg); border-radius: var(--r2); padding: 10px 12px; }
+.regel svg { width: 40px; height: 40px; grid-row: span 2; }
+.regel b { font-size: .98rem; } .regel span { font-size: .85rem; color: var(--grau); }
 
-.strecke { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 18px 0 8px; position: relative; }
-.strecke::before { content: ""; position: absolute; left: 4%; right: 4%; top: 44px; border-top: 5px dashed var(--grau); opacity: .35; }
-.halt {
-  position: relative; background: #fff; border: 2px solid var(--rand); border-radius: var(--radius); padding: 14px; text-align: left;
-  display: flex; flex-direction: column; gap: 4px; color: inherit;
-}
-.halt:hover { border-color: var(--grau); }
-.halt .emoji { font-size: 2.2rem; background: #fff; align-self: flex-start; padding-right: 8px; position: relative; }
-.halt .kl { font-weight: 700; font-size: 1.15rem; }
-.halt .st { color: var(--grau); font-size: .9rem; }
-.balken { height: 8px; background: var(--grau-hell); border-radius: 99px; overflow: hidden; margin-top: 6px; }
-.balken i { display: block; height: 100%; background: var(--gruen); }
-.halt .fertig { position: absolute; top: 10px; right: 10px; background: var(--gruen); border-radius: 99px; padding: 1px 9px; font-size: .78rem; font-weight: 700; }
-
-.ablauf { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; counter-reset: s; padding: 0; list-style: none; }
-.ablauf li { background: var(--grau-hell); border-radius: var(--radius); padding: 14px; counter-increment: s; }
-.ablauf li::before { content: counter(s); display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--grau); color: #fff; font-weight: 700; margin-bottom: 6px; }
-.ablauf b { display: block; }
-
-.regeln { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
-.regel { border: 2px solid var(--rand); border-radius: var(--radius); padding: 12px; text-align: center; }
-.regel svg { width: 64px; height: 64px; }
-.regel b { display: block; margin: 6px 0 2px; }
-.regel span { font-size: .9rem; color: var(--grau); }
+/* Knöpfe */
+.knopf { display: inline-block; background: var(--tinte); color: #fff; border: 0; border-radius: 14px; padding: 11px 22px; font-weight: 700; text-decoration: none; }
+.knopf:hover { filter: brightness(1.15); }
+.knopf.hell { background: #fff; color: var(--tinte); box-shadow: inset 0 0 0 2px var(--grau-h); }
+.knopf.klein { padding: 7px 14px; font-size: .9rem; border-radius: 11px; }
+.held .knopf { background: var(--gruen); color: var(--tinte); }
+.held .knopf.hell { background: rgba(255,255,255,.12); color: #fff; box-shadow: none; margin-left: 6px; }
 
 /* Klassenseite */
-.klkopf { padding: 26px 0 20px; }
-.klkopf.A { background: var(--gruen-hell); } .klkopf.B { background: var(--gelb-hell); }
-.klkopf.C { background: var(--grau-hell); } .klkopf.D { background: #f7ead3; }
-.klkopf .emoji { font-size: 2.6rem; }
-.klkopf .st { font-weight: 700; color: var(--grau); text-transform: uppercase; letter-spacing: .05em; font-size: .85rem; }
-.stand { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
-.chip { background: #fff; border: 1px solid var(--rand); border-radius: 99px; padding: 3px 12px; font-size: .88rem; }
-.chip.ok { background: var(--gruen); border-color: var(--gruen); font-weight: 700; }
-
+.klkopf { max-width: 1100px; margin: 10px auto 0; border-radius: var(--r); padding: 30px 8px 26px; }
+.klkopf .emoji { font-size: 2.4rem; }
+.klkopf .st { font-weight: 700; color: var(--grau); text-transform: uppercase; letter-spacing: .08em; font-size: .8rem; }
+.klkopf p { font-size: 1.08rem; max-width: 40em; }
+.stand { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
 .kann { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
-.kann > div { border-left: 6px solid var(--gruen); background: var(--grau-hell); border-radius: 0 var(--radius) var(--radius) 0; padding: 12px 14px; }
-.kann > div:nth-child(2) { border-color: var(--gelb); } .kann > div:nth-child(3) { border-color: var(--orange); } .kann > div:nth-child(4) { border-color: var(--grau); }
-.kann ul { margin: 0; padding-left: 1.1em; } .kann li { margin-bottom: .25em; }
-
-.karten { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 14px; }
-.karte { border: 2px solid var(--rand); border-radius: var(--radius); padding: 14px; display: flex; flex-direction: column; gap: 6px; background: #fff; }
-.karte.erledigt { border-color: var(--gruen); background: var(--gruen-hell); }
-.karte .meta { font-size: .82rem; color: var(--grau); text-transform: uppercase; letter-spacing: .04em; }
-.karte p { margin: 0; font-size: .96rem; }
-.karte .unten { margin-top: auto; padding-top: 8px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; justify-content: space-between; }
-.karte label { font-size: .92rem; display: flex; gap: 6px; align-items: center; cursor: pointer; }
-.karte input[type=checkbox] { width: 20px; height: 20px; accent-color: var(--grau); }
-
-.kasten { border: 2px solid var(--grau); border-radius: var(--radius); padding: 18px; margin-bottom: 16px; background: #fff; }
-.kasten.spiel { border-color: var(--gelb); background: var(--gelb-hell); }
-.kasten.pruefung { border-color: var(--grau); background: var(--grau-hell); }
-.kasten.praxis { border-color: var(--gruen); background: var(--gruen-hell); }
-.kasten h3 { margin-bottom: .3em; }
-.zaehler { font-size: .88rem; color: var(--grau); margin-bottom: 6px; }
-.grosskarte { background: #fff; border-radius: var(--radius); padding: 22px 16px; text-align: center; font-size: 1.25rem; font-weight: 700; margin: 10px 0; border: 1px solid var(--rand); }
+.kann > div { background: #fff; border-radius: var(--r); padding: 20px 22px; }
+.kann h3::before { content: ""; display: inline-block; width: 12px; height: 12px; border-radius: 4px; background: var(--gruen); margin-right: 8px; }
+.kann > div:nth-child(2) h3::before { background: var(--gelb); } .kann > div:nth-child(3) h3::before { background: var(--orange); } .kann > div:nth-child(4) h3::before { background: var(--grau); }
+.kann p { color: var(--grau); margin-bottom: .3em; }
+.kann ul { margin: 0; padding-left: 1.1em; } .kann li { margin-bottom: .3em; }
+.karten { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+.karte { border-radius: var(--r); padding: 20px; display: flex; flex-direction: column; gap: 6px; background: #fff; }
+.karte.erledigt { background: var(--gruen-h); }
+.karte .meta { font-size: .76rem; color: var(--grau); text-transform: uppercase; letter-spacing: .06em; font-weight: 600; }
+.karte p { margin: 0; font-size: .95rem; }
+.karte .unten { margin-top: auto; padding-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+label { cursor: pointer; }
+.karte label, .praxis label { font-size: .92rem; display: inline-flex; gap: 8px; align-items: center; font-weight: 600; }
+input[type=checkbox] { width: 22px; height: 22px; accent-color: var(--tinte); }
+.kasten { border-radius: var(--r); padding: 24px; margin-bottom: 14px; background: #fff; }
+.kasten.spiel { background: var(--gelb-h); }
+.kasten.praxis { background: var(--gruen-h); }
+.kasten h3 { margin-bottom: .3em; font-size: 1.2rem; }
+.zaehler { font-size: .85rem; color: var(--grau); margin-bottom: 6px; }
+.grosskarte { background: #fff; border-radius: var(--r2); padding: 26px 16px; text-align: center; font-size: 1.25rem; font-weight: 700; margin: 10px 0 14px; }
 .wahl { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
-.antworten { display: grid; gap: 8px; margin: 10px 0; }
-.antworten button { text-align: left; background: #fff; border: 2px solid var(--rand); border-radius: 10px; padding: 10px 14px; color: inherit; }
-.antworten button:hover:not(:disabled) { border-color: var(--grau); }
-.antworten button.richtig { border-color: #5e7a12; background: var(--gruen-hell); font-weight: 700; }
+.antworten { display: grid; gap: 8px; margin: 12px 0; }
+.antworten button { text-align: left; background: #fff; border: 2px solid var(--grau-h); border-radius: 14px; padding: 12px 16px; }
+.antworten button:hover:not(:disabled) { border-color: var(--tinte); }
+.antworten button.richtig { border-color: var(--gruen); background: var(--gruen-h); font-weight: 700; }
 .antworten button.falsch { border-color: var(--rot); background: #fbe9e7; }
-.rueck { border-radius: 10px; padding: 10px 14px; margin: 10px 0; background: #fff; border-left: 6px solid var(--gruen); }
-.rueck.nein { border-left-color: var(--rot); }
-.ergebnis { font-size: 1.2rem; font-weight: 700; }
+.rueck { border-radius: 14px; padding: 12px 16px; margin: 12px 0; background: #fff; box-shadow: inset 6px 0 0 var(--gruen); }
+.pruefung .rueck { background: var(--bg); }
+.rueck.nein { box-shadow: inset 6px 0 0 var(--rot); }
+.rueck ul { margin: .4em 0; padding-left: 1.2em; }
+.ergebnis { font-size: 1.25rem; font-weight: 700; }
 
-/* Sprachmodell-Spiel */
+/* Sprachmodell-Spiel und Detektor */
 .wortreihe { display: grid; gap: 6px; margin: 8px 0 14px; }
 .wort { display: grid; grid-template-columns: 11em 1fr 3.2em; gap: 8px; align-items: center; font-size: .95rem; }
-.wort .b { height: 14px; background: #fff; border-radius: 99px; overflow: hidden; border: 1px solid var(--rand); }
-.wort .b i { display: block; height: 100%; background: var(--grau); transition: width .25s; }
-.satz { background: #fff; border-radius: 10px; padding: 12px 14px; font-size: 1.1rem; min-height: 3em; border: 1px solid var(--rand); }
-.satz mark { background: var(--gelb); border-radius: 4px; padding: 0 3px; }
-input[type=range] { width: min(320px, 100%); accent-color: var(--grau); }
-
-/* Detektor */
-.kitext span { cursor: pointer; border-radius: 4px; padding: 1px 2px; }
-.kitext span:hover { background: var(--gelb-hell); }
+.wort .b { height: 14px; background: #fff; border-radius: 99px; overflow: hidden; }
+.wort .b i { display: block; height: 100%; background: var(--tinte); border-radius: 99px; transition: width .25s; }
+.satz { background: #fff; border-radius: 14px; padding: 14px 16px; font-size: 1.1rem; min-height: 3em; }
+.satz mark { background: var(--gelb); border-radius: 5px; padding: 0 4px; }
+input[type=range] { width: min(320px, 100%); accent-color: var(--tinte); }
+.kitext { background: #fff; border-radius: 14px; padding: 14px 16px; line-height: 1.8; }
+.kitext span { cursor: pointer; border-radius: 5px; padding: 2px 3px; }
+.kitext span:hover { background: var(--gelb-h); }
 .kitext span.markiert { background: var(--gelb); }
 .kitext.fertig span { cursor: default; }
 .kitext.fertig span.falschsatz { background: #f6c9c3; text-decoration: underline wavy var(--rot); }
-.kitext.fertig span.markiert:not(.falschsatz) { background: var(--grau-hell); text-decoration: line-through; }
+.kitext.fertig span.markiert:not(.falschsatz) { background: var(--grau-h); text-decoration: line-through; }
 
 /* Führerschein */
-.schein {
-  max-width: 640px; margin: 18px auto; border-radius: 18px; padding: 20px 22px; color: var(--grau-dunkel);
-  background: linear-gradient(135deg, #fff 0%, var(--gruen-hell) 55%, var(--gelb-hell) 100%); border: 3px solid var(--grau);
-  box-shadow: 0 6px 18px rgba(47,58,64,.18);
-}
-.schein .oben { display: flex; gap: 14px; align-items: center; border-bottom: 2px solid var(--grau); padding-bottom: 10px; margin-bottom: 12px; }
-.schein .titel { font-size: 1.5rem; font-weight: 700; letter-spacing: .08em; }
-.schein .unter { font-size: .85rem; color: var(--grau); }
-.schein .name { font-size: 1.3rem; font-weight: 700; margin: 4px 0 12px; }
+.schein { max-width: 660px; margin: 20px auto; border-radius: var(--r); padding: 26px; background: linear-gradient(150deg, #fff 0%, var(--gruen-h) 55%, var(--gelb-h) 100%); box-shadow: 0 10px 30px rgba(35,45,50,.15); }
+.schein .oben { display: flex; gap: 14px; align-items: center; padding-bottom: 14px; margin-bottom: 14px; border-bottom: 2px solid rgba(35,45,50,.15); }
+.kachel { width: 58px; height: 58px; border-radius: var(--r2); background: conic-gradient(from 210deg, var(--grau) 0 33%, var(--gruen) 0 66%, var(--gelb) 0); color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 1.3rem; flex: none; text-shadow: 0 1px 2px rgba(0,0,0,.35); }
+.schein .titel { font-size: 1.5rem; font-weight: 800; letter-spacing: .08em; }
+.schein .unter { font-size: .82rem; color: var(--grau); }
+.schein .name { font-size: 1.4rem; font-weight: 700; margin: 4px 0 14px; }
 .schein .felder { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
-.feld { border: 2px dashed var(--grau); border-radius: 12px; padding: 8px; text-align: center; min-height: 118px; background: rgba(255,255,255,.6); }
+.feld { border-radius: var(--r2); padding: 10px 8px; text-align: center; min-height: 124px; background: rgba(255,255,255,.7); }
 .feld .k { font-weight: 700; } .feld .s { font-size: .78rem; color: var(--grau); }
-.stempel { display: inline-block; margin-top: 8px; border: 3px solid #5e7a12; color: #5e7a12; border-radius: 8px; padding: 2px 6px; font-weight: 700; font-size: .78rem; transform: rotate(-8deg); text-transform: uppercase; }
+.stempel { display: inline-block; margin-top: 8px; border: 3px solid var(--gruen-d); color: var(--gruen-d); border-radius: 8px; padding: 2px 6px; font-weight: 700; font-size: .76rem; transform: rotate(-8deg); text-transform: uppercase; }
 .feld .leer { margin-top: 10px; font-size: 1.8rem; opacity: .25; }
 .namefeld { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; justify-content: center; }
-.namefeld input { font: inherit; padding: 8px 12px; border: 2px solid var(--rand); border-radius: 10px; min-width: 240px; }
+.namefeld input { font: inherit; padding: 10px 14px; border: 2px solid var(--grau-h); border-radius: 14px; min-width: 240px; background: #fff; }
 
-/* Zusammenfassung */
-.bkopf { display: flex; gap: 16px; align-items: center; border-bottom: 3px solid var(--grau); padding: 10px 0; margin: 16px 0 6px; flex-wrap: wrap; }
-.bkopf .titel { font-size: 1.5rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
-.bklasse { border: 2px solid var(--rand); border-left: 8px solid var(--gruen); border-radius: var(--radius); padding: 12px 16px; margin: 14px 0; break-inside: avoid; }
-.bklasse:nth-of-type(2) { border-left-color: var(--gelb); } .bklasse:nth-of-type(3) { border-left-color: var(--orange); } .bklasse:nth-of-type(4) { border-left-color: var(--grau); }
-.bklasse h2 { margin-top: 0; font-size: 1.25rem; } .bklasse h2 small { font-weight: 400; color: var(--grau); font-size: .9rem; }
+/* Zusammenfassung, Hinweise */
+.bkopf { display: flex; gap: 16px; align-items: center; padding: 16px 4px; margin-top: 10px; flex-wrap: wrap; }
+.bkopf .titel { font-size: 1.5rem; font-weight: 800; }
+.bklasse { background: #fff; border-radius: var(--r); padding: 20px 24px; margin: 14px 0; break-inside: avoid; box-shadow: inset 8px 0 0 var(--gruen); }
+.bklasse:nth-of-type(2) { box-shadow: inset 8px 0 0 var(--gelb); } .bklasse:nth-of-type(3) { box-shadow: inset 8px 0 0 var(--orange); } .bklasse:nth-of-type(4) { box-shadow: inset 8px 0 0 var(--grau); }
+.bklasse h2 { margin: 0 0 12px; font-size: 1.25rem; } .bklasse h2 small { font-weight: 400; color: var(--grau); font-size: .9rem; }
 .bklasse h2 .stempel { transform: none; margin: 0 0 0 8px; vertical-align: middle; }
-.bklasse ul, .bklasse ol { margin: 0; padding-left: 1.2em; } .bklasse li { margin-bottom: .25em; }
-.bspalten { display: grid; grid-template-columns: 3fr 2fr; gap: 18px; }
-.haken { list-style: none; padding-left: 0 !important; } .haken li::before { content: "✔ "; color: #5e7a12; font-weight: 700; }
+.bklasse ul, .bklasse ol { margin: 0; padding-left: 1.2em; } .bklasse li { margin-bottom: .3em; }
+.bspalten { display: grid; grid-template-columns: 3fr 2fr; gap: 22px; }
+.haken { list-style: none; padding-left: 0 !important; } .haken li::before { content: "✔ "; color: var(--gruen-d); font-weight: 700; }
 .offen { color: var(--grau); font-size: .9rem; margin: .5em 0 0; }
-@media (max-width: 820px) { .bspalten { grid-template-columns: 1fr; } }
-@page { size: A4; margin: 14mm; }
-@media print {
-  body { font-size: 11pt; } .bericht { padding: 0; max-width: none; }
-  .bklasse, .bkopf { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .bspalten { grid-template-columns: 3fr 2fr; }
-}
+.hinweis { background: var(--gelb-h); padding: 14px 18px; border-radius: var(--r2); margin: 12px 0; }
+.seite { background: #fff; border-radius: var(--r); padding: 28px; margin-top: 10px; }
 
-/* Lehrkräfte */
-.tabwrap { overflow-x: auto; }
-table { border-collapse: collapse; width: 100%; font-size: .93rem; min-width: 760px; }
-th, td { border: 1px solid var(--rand); padding: 8px 10px; vertical-align: top; text-align: left; }
-thead th { background: var(--grau); color: #fff; }
-tbody th { background: var(--grau-hell); width: 15%; }
-.hinweis { background: var(--gelb-hell); border-left: 6px solid var(--gelb); padding: 10px 14px; border-radius: 0 10px 10px 0; margin: 12px 0; }
-.liste li { margin-bottom: .35em; }
-footer { margin-top: 40px; background: var(--grau); color: #fff; padding: 18px 0; font-size: .9rem; }
-footer a { color: var(--gelb); }
-main { min-height: 60vh; padding-bottom: 20px; }
-
-@media (max-width: 820px) {
-  .strecke, .ablauf { grid-template-columns: repeat(2, 1fr); } .strecke::before { display: none; }
-  .regeln { grid-template-columns: repeat(2, 1fr); } .kann { grid-template-columns: 1fr; }
+@media (max-width: 900px) {
+  .t.held, .t.minischein, .t.breit, .t.schmal { grid-column: span 12; } .t.kl { grid-column: span 6; min-height: 0; }
+  .kann, .bspalten { grid-template-columns: 1fr; }
   .schein .felder { grid-template-columns: repeat(2, 1fr); }
   .wort { grid-template-columns: 8em 1fr 3em; }
-  .entwurf { font-size: 1.3rem; } .marke b { font-size: 1.25rem; }
+  .entwurf { font-size: 1.1rem; }
+  .band { margin-inline: 20px; }
+  nav.haupt { position: static; }
 }
+@media (max-width: 520px) { .ablauf { grid-template-columns: 1fr; } .t { padding: 18px; } .held .knopf.hell { margin: 8px 0 0; } }
+@page { size: A4; margin: 14mm; }
 @media print {
+  body { background: #fff; font-size: 11pt; }
   .kopf, .band, nav.haupt, footer, .nichtdrucken { display: none !important; }
-  .schein { box-shadow: none; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .bericht { padding: 0; max-width: none; }
+  .schein, .bklasse, .bkopf, .kachel { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .schein { box-shadow: none; } .bklasse { border: 1px solid var(--grau-h); }
+  .bspalten { grid-template-columns: 3fr 2fr; }
 }
 </style>
 </head>
 <body>
 <header class="kopf">
   <div class="wrap">
-    <div class="marke"><b>KI-Führerschein</b><small>Gymnasium Dresden-Pieschen</small></div>
+    <div class="marke"><i></i><div>KI-Führerschein<small>Gymnasium Dresden-Pieschen</small></div></div>
     <div class="entwurf">Entwurf</div>
   </div>
 </header>
 <div class="band">ENTWURF · Erster Stand nach dem pädagogischen Tag am 19.11.2026 · noch kein offizielles Angebot der Schule</div>
-<nav class="haupt" aria-label="Hauptnavigation"><div class="wrap" id="nav"></div></nav>
+<nav class="haupt" aria-label="Hauptnavigation"><div class="wrap"><div id="nav"></div></div></nav>
 <main id="app"></main>
-<footer><div class="wrap">Entwurf für das Gymnasium Dresden-Pieschen · erster Stand nach dem pädagogischen Tag am 19.11.2026 · Fortschritt wird nur in diesem Browser gespeichert, es werden keine Daten übertragen. · <button data-geh="impressum">Impressum</button></div></footer>
+<footer><div class="wrap">Entwurf für das Gymnasium Dresden-Pieschen · erster Stand nach dem pädagogischen Tag am 19.11.2026<br>Fortschritt wird nur in diesem Browser gespeichert, es werden keine Daten übertragen. · <button data-geh="impressum">Impressum</button></div></footer>
 
 <script src="daten.js"></script>
 <script>
@@ -275,38 +254,42 @@ function zeichenSvg(z) {
 }
 
 function start() {
-  return `
-  <section class="held"><div class="wrap">
-    <h1>Mach deinen KI-Führerschein</h1>
-    <p>Wer ein Fahrzeug lenkt, muss wissen, wie es funktioniert und welche Regeln gelten. Mit künstlicher Intelligenz ist es genauso. Die Idee: Von Klasse 5 bis 12 sammelst du vier Führerscheinklassen.</p>
-    <button class="knopf" data-geh="A">Losfahren</button>
-    <button class="knopf hell" data-geh="schein">Mein Führerschein</button>
-  </div></section>
-  <div class="wrap">
-    <h2>Deine Strecke</h2>
-    <div class="strecke">${KLASSEN.map(k => `
-      <button class="halt" data-geh="${k.id}">
-        ${bestanden(k) ? '<span class="fertig">bestanden</span>' : ""}
-        <span class="emoji">${k.emoji}</span>
-        <span class="kl">Klasse ${k.id}: ${k.titel}</span>
-        <span class="st">${k.stufe} · „${k.spitz}“</span>
-        <span>${k.motto}</span>
-        <span class="balken"><i style="width:${fortschritt(k)}%"></i></span>
-      </button>`).join("")}
-    </div>
-
-    <h2>So läuft jede Führerscheinklasse</h2>
-    <ol class="ablauf">
-      <li><b>Fahrstunden</b>Stationen im Unterricht und im Netz: ausprobieren, spielen, selbst trainieren.</li>
-      <li><b>Übungsplatz</b>Kurze Spiele direkt hier auf der Seite – so oft du willst.</li>
-      <li><b>Theorieprüfung</b>Sechs Fragen. Mit fünf richtigen hast du bestanden.</li>
-      <li><b>Praxisprüfung</b>Eine echte Aufgabe mit KI. Deine Lehrkraft bestätigt sie, dann gibt es den Stempel.</li>
-    </ol>
-
-    <h2>Die fünf Verkehrsregeln</h2>
-    <p>Sie gelten in allen Klassen – vom ersten Prompt bis zur Facharbeit.</p>
-    <div class="regeln">${REGELN.map(r => `<div class="regel">${zeichenSvg(r.zeichen)}<b>${r.t}</b><span>${r.s}</span></div>`).join("")}</div>
-  </div>`;
+  const status = k => bestanden(k) ? '<span class="chip ok">bestanden ✓</span>' : fortschritt(k) ? `<span class="chip">${fortschritt(k)} %</span>` : '<span class="chip">offen</span>';
+  return `<div class="wrap"><div class="bento">
+    <section class="t held">
+      <div><small>KLASSE 5 BIS 12 · VIER FÜHRERSCHEINKLASSEN</small>
+        <h1>Mach deinen KI-Führerschein.</h1>
+        <p>Wer ein Fahrzeug lenkt, muss wissen, wie es funktioniert und welche Regeln gelten. Mit künstlicher Intelligenz ist es genauso.</p></div>
+      <div><button class="knopf" data-geh="A">Losfahren</button><button class="knopf hell" data-geh="bericht">Meine Zusammenfassung</button></div>
+    </section>
+    <button class="t minischein" data-geh="schein">
+      <small>MEIN FÜHRERSCHEIN</small>
+      <span class="name">${esc(zustand.name) || "Noch ohne Namen"}</span>
+      <span class="stp">${KLASSEN.map(k => `<span class="${bestanden(k) ? "ok" : ""}">${k.id}</span>`).join("")}</span>
+    </button>
+    ${KLASSEN.map(k => `
+    <button class="t kl ${k.id}" data-geh="${k.id}">
+      <span class="emoji">${k.emoji}</span>
+      <b>${k.id} · ${k.titel}</b>
+      <span class="st">${k.stufe} · „${k.spitz}“</span>
+      ${status(k)}
+      <span class="text">${k.motto}</span>
+      <span class="balken"><i style="width:${fortschritt(k)}%"></i></span>
+    </button>`).join("")}
+    <section class="t breit">
+      <h2>So läuft jede Führerscheinklasse</h2>
+      <ol class="ablauf">
+        <li><b>Fahrstunden</b>Stationen im Unterricht und im Netz: ausprobieren, spielen, selbst trainieren.</li>
+        <li><b>Übungsplatz</b>Kurze Spiele direkt hier auf der Seite – so oft du willst.</li>
+        <li><b>Theorieprüfung</b>Sechs Fragen. Mit fünf richtigen hast du bestanden.</li>
+        <li><b>Praxisprüfung</b>Eine echte Aufgabe mit KI. Deine Lehrkraft bestätigt sie, dann gibt es den Stempel.</li>
+      </ol>
+    </section>
+    <section class="t schmal">
+      <h2>Die fünf Verkehrsregeln</h2>
+      <div class="regeln">${REGELN.map(r => `<div class="regel">${zeichenSvg(r.zeichen)}<b>${r.t}</b><span>${r.s}</span></div>`).join("")}</div>
+    </section>
+  </div></div>`;
 }
 
 function klassenSeite(k) {
@@ -426,7 +409,7 @@ function quizNeu(id) { $("#quiz-" + id).innerHTML = quizHtml(klasse(id)); }
 /* ---------- Führerschein ---------- */
 function schein() {
   return `<div class="wrap">
-    <h1 class="nichtdrucken" style="margin-top:24px">Mein KI-Führerschein</h1>
+    <h1 class="nichtdrucken" style="margin:24px 4px 14px">Mein KI-Führerschein</h1>
     <div class="namefeld nichtdrucken">
       <label for="nm">Name auf dem Führerschein:</label>
       <input id="nm" type="text" maxlength="40" placeholder="Vorname genügt" value="${esc(zustand.name)}">
@@ -497,14 +480,14 @@ function bericht() {
 
 /* ---------- Impressum (Platzhalter) ---------- */
 function impressum() {
-  return `<div class="wrap">
-    <h1 style="margin-top:24px">Impressum</h1>
+  return `<div class="wrap"><div class="seite">
+    <h1>Impressum</h1>
     <div class="hinweis"><b>Platzhalter.</b> Die Angaben werden ergänzt, bevor aus dem Entwurf ein offizielles Angebot wird.</div>
     <p><b>Verantwortlich für den Inhalt:</b> [Name]<br>[Anschrift]<br>[E-Mail]</p>
     <h2>Datenschutz</h2>
     <p>Diese Seite speichert deinen Fortschritt und den eingegebenen Namen ausschließlich in deinem Browser (lokaler Speicher). Es werden keine Daten an einen Server übertragen, es gibt keine Cookies und keine Analyse.</p>
     <p>Die Seite wird über GitHub Pages ausgeliefert; dabei verarbeitet GitHub technisch notwendige Zugriffsdaten wie die IP-Adresse. Links zu anderen Angeboten (zum Beispiel zu den Fahrstunden) führen auf fremde Seiten mit eigenen Datenschutzregeln.</p>
-  </div>`;
+  </div></div>`;
 }
 
 /* ===================== Zeichnen und Ereignisse ===================== */
