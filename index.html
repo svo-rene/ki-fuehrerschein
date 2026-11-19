@@ -283,7 +283,7 @@ function start() {
         <li><b>Fahrstunden</b>Stationen im Netz, mit schulKI und in der Gruppe: ausprobieren, spielen, selbst trainieren.</li>
         <li><b>Übungsplatz</b>Kurze Spiele direkt hier auf der Seite – so oft du willst.</li>
         <li><b>Theorieprüfung</b>Sechs Fragen. Mit fünf richtigen hast du bestanden.</li>
-        <li><b>Praxisprüfung</b>Eine echte Aufgabe mit KI. Deine Lehrkraft bestätigt sie, dann gibt es den Stempel.</li>
+        <li><b>Praxisprüfung</b>Eine echte Aufgabe mit KI. Wenn du alles geschafft hast, hakst du sie selbst ab und bekommst den Stempel.</li>
       </ol>
     </section>
     <section class="t schmal">
@@ -303,7 +303,7 @@ function klassenSeite(k) {
     <div class="stand">
       <span class="chip">Fortschritt ${fortschritt(k)} %</span>
       <span class="chip ${q >= BESTEHEN ? "ok" : ""}">Theorie ${q === undefined ? "offen" : q + " von 6"}</span>
-      <span class="chip ${zustand.praxis[k.id] ? "ok" : ""}">Praxis ${zustand.praxis[k.id] ? "bestätigt" : "offen"}</span>
+      <span class="chip ${zustand.praxis[k.id] ? "ok" : ""}">Praxis ${zustand.praxis[k.id] ? "erledigt" : "offen"}</span>
       ${bestanden(k) ? '<span class="chip ok">Klasse ' + k.id + " bestanden</span>" : ""}
     </div>
   </div></section>
@@ -333,9 +333,8 @@ function klassenSeite(k) {
     <div class="kasten praxis">
       <h3>${k.praxis.t}</h3>
       <p>${k.praxis.x}</p>
-      <p><b>Das zeigst du vor:</b> ${k.praxis.n}</p>
-      <label><input type="checkbox" data-praxis="${k.id}" ${zustand.praxis[k.id] ? "checked" : ""}> Von der Lehrkraft bestätigt</label>
-      <p class="zaehler">Im Prototyp ist das ein einfaches Häkchen. Später bestätigt die Lehrkraft, zum Beispiel mit einem Code.</p>
+      <p><b>Das hast du am Ende:</b> ${k.praxis.n}</p>
+      <label><input type="checkbox" data-praxis="${k.id}" ${zustand.praxis[k.id] ? "checked" : ""}> Geschafft – ich habe alles davon erledigt</label>
     </div>
   </div>`;
 }
@@ -449,7 +448,7 @@ function bericht() {
             ${fs.map(f => `<li>Fahrstunde: ${f.t}</li>`).join("")}
             ${sp.map(s => `<li>Übungsplatz: ${s.t.replace(/:.*/, "")}</li>`).join("")}
             ${q !== undefined ? `<li>Theorieprüfung: ${q} von 6 richtig${q >= BESTEHEN ? " (bestanden)" : ""}</li>` : ""}
-            ${zustand.praxis[k.id] ? `<li>Praxisprüfung: ${k.praxis.t} (bestätigt)</li>` : ""}
+            ${zustand.praxis[k.id] ? `<li>Praxisprüfung: ${k.praxis.t} (erledigt)</li>` : ""}
           </ul>
           <p class="offen">${k.fahrstunden.length - fs.length ? "Noch offen: " + (k.fahrstunden.length - fs.length) + " Fahrstunden" : "Alle Fahrstunden erledigt"}${q === undefined || q < BESTEHEN ? ", Theorieprüfung" : ""}${zustand.praxis[k.id] ? "" : ", Praxisprüfung"}.</p>
         </div>

@@ -57,7 +57,7 @@ const KLASSEN = [
     { f: "Was gehört nicht in einen KI-Chat?", a: ["Mein voller Name, meine Adresse und Fotos von Mitschülern", "Eine Frage zu den Planeten", "Ein Gedicht, das ich selbst geschrieben habe", "Die Bitte um einen Tipp für Vokabeln"], e: "Persönliche Daten bleiben draußen – deine eigenen und erst recht die von anderen." },
     { f: "Die KI erkennt deine gezeichnete Katze nicht. Was ist die beste Erklärung?", a: ["Meine Zeichnung sieht anders aus als die Katzen, mit denen sie trainiert wurde", "Die KI mag keine Katzen", "Katzen kann man grundsätzlich nicht zeichnen", "Die KI hat gerade Pause"], e: "Die KI vergleicht mit ihren Trainingsbeispielen. Was davon stark abweicht, erkennt sie schlecht." }
   ],
-  praxis: { t: "Ein Prompt, drei Antworten", x: "Stelle in schulKI dreimal dieselbe Sachfrage aus dem Unterricht. Markiere die Unterschiede zwischen den Antworten. Prüfe eine Aussage im Schulbuch oder Lexikon nach. Stelle dein Ergebnis in einer Minute vor.", n: "Drei Antworten mit Markierungen und die geprüfte Aussage mit Quelle" }
+  praxis: { t: "Ein Prompt, drei Antworten", x: "Stelle in schulKI dreimal dieselbe Sachfrage aus dem Unterricht. Markiere die Unterschiede zwischen den Antworten. Prüfe eine Aussage im Schulbuch oder Lexikon nach. Erkläre dein Ergebnis jemandem in einer Minute.", n: "Drei Antworten mit Markierungen und die geprüfte Aussage mit Quelle" }
 },
 {
   id: "B", stufe: "Klasse 7/8", titel: "Prüfen und anwenden", emoji: "🛵", spitz: "Moped",
@@ -199,7 +199,7 @@ const KLASSEN = [
     { f: "Welche Aussage über Lernen und Leistung stimmt?", a: ["Ein gutes Produkt, das mit KI entstanden ist, zeigt noch nicht, dass ich es selbst kann", "Wer ein gutes Ergebnis abgibt, hat es auch gelernt", "Mit KI lernt man automatisch schneller", "Ohne KI lernt man grundsätzlich besser"], e: "Lernweg und Produkt sind zweierlei. Entscheidend ist, was du danach ohne Hilfe kannst." },
     { f: "Wie prüfst du einen selbst gebauten Lernassistenten sinnvoll?", a: ["Mit gezielten Testfällen: falsche Lösungen, Grenzfälle, Bitte um die fertige Lösung", "Ich stelle eine einfache Frage – wenn die stimmt, passt alles", "Ich frage den Assistenten, ob er gut ist", "Gar nicht, der Systemprompt regelt das"], e: "Erst Testfälle zeigen, ob der Assistent Fehler erkennt, beim Thema bleibt und nicht einfach die Lösung verrät." }
   ],
-  praxis: { t: "Mein Lernassistent", x: "Erstellen Sie für ein Fach Ihrer Wahl einen Lernassistenten. Prüfen Sie ihn mit drei eigenen Testfällen und verbessern Sie den Systemprompt. Stellen Sie Assistent, Testfälle und Grenzen in drei Minuten vor.", n: "Systemprompt, drei Testfälle mit Ergebnis, Kurzvorstellung" }
+  praxis: { t: "Mein Lernassistent", x: "Erstellen Sie für ein Fach Ihrer Wahl einen Lernassistenten. Prüfen Sie ihn mit drei eigenen Testfällen und verbessern Sie den Systemprompt. Erklären Sie jemandem in drei Minuten Assistent, Testfälle und Grenzen.", n: "Systemprompt, drei Testfälle mit Ergebnis, Kurzvorstellung" }
 }
 ];
 
