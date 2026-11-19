@@ -99,6 +99,7 @@ footer button { background: none; border: 0; text-decoration: underline; padding
 .karte { border-radius: var(--r); padding: 20px; display: flex; flex-direction: column; gap: 6px; background: #fff; }
 .karte.erledigt { background: var(--gruen-h); }
 .karte .meta { font-size: .76rem; color: var(--grau); text-transform: uppercase; letter-spacing: .06em; font-weight: 600; }
+.karte .meta.ort { text-transform: none; letter-spacing: 0; font-size: .85rem; }
 .karte p { margin: 0; font-size: .95rem; }
 .karte .unten { margin-top: auto; padding-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; justify-content: space-between; }
 label { cursor: pointer; }
@@ -279,7 +280,7 @@ function start() {
     <section class="t breit">
       <h2>So läuft jede Führerscheinklasse</h2>
       <ol class="ablauf">
-        <li><b>Fahrstunden</b>Stationen im Unterricht und im Netz: ausprobieren, spielen, selbst trainieren.</li>
+        <li><b>Fahrstunden</b>Stationen im Netz, mit schulKI und in der Gruppe: ausprobieren, spielen, selbst trainieren.</li>
         <li><b>Übungsplatz</b>Kurze Spiele direkt hier auf der Seite – so oft du willst.</li>
         <li><b>Theorieprüfung</b>Sechs Fragen. Mit fünf richtigen hast du bestanden.</li>
         <li><b>Praxisprüfung</b>Eine echte Aufgabe mit KI. Deine Lehrkraft bestätigt sie, dann gibt es den Stempel.</li>
@@ -318,7 +319,7 @@ function klassenSeite(k) {
         <h3>${f.t}</h3><p>${f.x}</p>
         <div class="unten">
           <label><input type="checkbox" data-fs="${id}" ${ok ? "checked" : ""}> erledigt</label>
-          ${f.url ? `<a class="knopf klein hell" href="${f.url}" target="_blank" rel="noopener">${f.ut} öffnen</a>` : '<span class="meta">im Unterricht</span>'}
+          ${f.url ? `<a class="knopf klein hell" href="${f.url}" target="_blank" rel="noopener">${f.ut} öffnen</a>` : `<span class="meta ort">${f.o || "im Unterricht"}</span>`}
         </div></div>`;
     }).join("")}</div>
 

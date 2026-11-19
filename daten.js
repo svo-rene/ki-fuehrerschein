@@ -22,16 +22,16 @@ const KLASSEN = [
   kann: [
     ["Beispiele für KI in meinem Alltag nennen.", "erklären, dass eine KI aus sehr vielen Beispielen (Trainingsdaten) lernt.", "die Wörter Prompt, Trainingsdaten und Halluzination mit eigenen Worten erklären.", "erklären, warum derselbe Prompt verschiedene Antworten liefern kann."],
     ["einer KI einen klaren Auftrag geben.", "sagen, welche Angaben über mich und andere nicht in eine KI gehören."],
-    ["mit einem Assistenten der Schul-KI einen Lernplan aufstellen.", "einen eigenen Text mit KI-Hinweisen verbessern und selbst entscheiden, was ich übernehme."],
+    ["mit einem Assistenten in schulKI einen Lernplan aufstellen.", "einen eigenen Text mit KI-Hinweisen verbessern und selbst entscheiden, was ich übernehme."],
     ["sagen, für wen ein KI-Angebot gedacht ist (Altersgrenzen).", "Bescheid geben, wenn mir eine KI-Antwort seltsam oder unangenehm vorkommt."]
   ],
   fahrstunden: [
-    { b: 0, t: "Was ist künstliche Intelligenz?", d: "15 min", x: "Schaut gemeinsam das Erklärvideo der „Sendung mit der Maus“ zu künstlicher Intelligenz. Sammelt danach an der Tafel: Wo begegnet euch KI?" },
+    { b: 0, t: "Was ist künstliche Intelligenz?", d: "15 min", x: "Schau dir die Sachgeschichte der „Sendung mit der Maus“ an: Wie schreibt eine KI Texte? Notiere danach in zwei Sätzen, warum eine KI „mehr zählt, als sie schreibt“.", url: "https://www.wdrmaus.de/filme/sachgeschichten/kuenstliche_intelligenz.php5", ut: "Maus-Video" },
     { b: 0, t: "Die KI rät deine Zeichnung", d: "15 min", x: "Zeichne sechs Begriffe. Sieh dir danach an, mit welchen Zeichnungen die KI deine verglichen hat. Warum erkennt sie manche nicht?", url: "https://quickdraw.withgoogle.com/", ut: "Quick, Draw!" },
     { b: 0, t: "Schlag das Krokodil", d: "20 min", x: "Spiele Mini-Schach gegen einen Computer, der am Anfang nichts kann. Nach jedem Spiel wird er belohnt oder bestraft. Ab wann gewinnst du nicht mehr?", url: "https://www.stefanseegerer.de/schlag-das-krokodil/", ut: "Schlag das Krokodil" },
-    { b: 0, t: "Ein Prompt, drei Antworten", d: "15 min", x: "Stellt der Schul-KI dreimal dieselbe Frage. Vergleicht die Antworten Wort für Wort. Was bleibt gleich, was ändert sich?" },
-    { b: 2, t: "Mein Lernplan", d: "25 min", x: "Lass dir vom Assistenten „Mein Lernplan“ helfen, die Woche vor einer Klassenarbeit zu planen. Streiche, was für dich nicht passt." },
-    { b: 2, t: "Texte überarbeiten", d: "25 min", x: "Schreibe erst selbst. Lass dir dann drei Hinweise zu deinem Text geben und setze die um, die du gut findest." }
+    { b: 0, o: "mit schulKI", t: "Ein Prompt, drei Antworten", d: "15 min", x: "Stellt in schulKI dreimal dieselbe Frage. Vergleicht die Antworten Wort für Wort. Was bleibt gleich, was ändert sich?" },
+    { b: 2, o: "mit schulKI", t: "Mein Lernplan", d: "25 min", x: "Lass dir vom Assistenten „Mein Lernplan“ helfen, die Woche vor einer Klassenarbeit zu planen. Streiche, was für dich nicht passt." },
+    { b: 2, o: "mit schulKI", t: "Texte überarbeiten", d: "25 min", x: "Schreibe erst selbst. Lass dir dann drei Hinweise zu deinem Text geben und setze die um, die du gut findest." }
   ],
   spiele: [
     { typ: "sortieren", t: "KI oder keine KI?", intro: "Steckt in diesem Gerät oder Programm etwas, das aus Beispielen gelernt hat?",
@@ -57,7 +57,7 @@ const KLASSEN = [
     { f: "Was gehört nicht in einen KI-Chat?", a: ["Mein voller Name, meine Adresse und Fotos von Mitschülern", "Eine Frage zu den Planeten", "Ein Gedicht, das ich selbst geschrieben habe", "Die Bitte um einen Tipp für Vokabeln"], e: "Persönliche Daten bleiben draußen – deine eigenen und erst recht die von anderen." },
     { f: "Die KI erkennt deine gezeichnete Katze nicht. Was ist die beste Erklärung?", a: ["Meine Zeichnung sieht anders aus als die Katzen, mit denen sie trainiert wurde", "Die KI mag keine Katzen", "Katzen kann man grundsätzlich nicht zeichnen", "Die KI hat gerade Pause"], e: "Die KI vergleicht mit ihren Trainingsbeispielen. Was davon stark abweicht, erkennt sie schlecht." }
   ],
-  praxis: { t: "Ein Prompt, drei Antworten", x: "Stelle der Schul-KI dreimal dieselbe Sachfrage aus dem Unterricht. Markiere die Unterschiede zwischen den Antworten. Prüfe eine Aussage im Schulbuch oder Lexikon nach. Stelle dein Ergebnis in einer Minute vor.", n: "Drei Antworten mit Markierungen und die geprüfte Aussage mit Quelle" }
+  praxis: { t: "Ein Prompt, drei Antworten", x: "Stelle in schulKI dreimal dieselbe Sachfrage aus dem Unterricht. Markiere die Unterschiede zwischen den Antworten. Prüfe eine Aussage im Schulbuch oder Lexikon nach. Stelle dein Ergebnis in einer Minute vor.", n: "Drei Antworten mit Markierungen und die geprüfte Aussage mit Quelle" }
 },
 {
   id: "B", stufe: "Klasse 7/8", titel: "Prüfen und anwenden", emoji: "🛵", spitz: "Moped",
@@ -72,11 +72,11 @@ const KLASSEN = [
     { b: 0, t: "Deepfake Detectives", d: "20 min", x: "Echt oder von einer KI erzeugt? Entscheide Bild für Bild und lies die Erklärungen. Notiere drei Merkmale, an denen du Fälschungen erkennst.", url: "https://www.klicksafe.de/materialien/quiz-deepfake-detectives", ut: "klicksafe-Quiz" },
     { b: 0, t: "Trainiere deine eigene KI", d: "30 min", x: "Bringe einer KI bei, zwei Gegenstände zu unterscheiden. Teste sie dann mit einem Gegenstand, den sie nie gesehen hat. Braucht eine Kamera.", url: "https://teachablemachine.withgoogle.com/", ut: "Teachable Machine" },
     { b: 0, t: "Die Fake-News-Fabrik", d: "25 min", x: "Schlüpfe in die Rolle von jemandem, der Falschmeldungen verbreitet. Welche Tricks benutzt das Spiel? Woran erkennst du sie künftig?", url: "https://www.getbadnews.de/", ut: "Bad News" },
-    { b: 1, t: "Prompt-Werkstatt", d: "20 min", x: "Nimm einen schwachen Prompt („Erkläre Prozentrechnung“) und ergänze nacheinander Rolle, Kontext und Format. Vergleiche die Antworten." },
-    { b: 1, t: "Der wörtliche Roboter", d: "20 min", x: "Schreibe dem Assistenten eine Anleitung, wie man ein Brot schmiert. Er führt sie wortwörtlich aus. Verbessere sie, bis nichts mehr schiefgeht: eindeutig, vollständig, ausführbar." },
-    { b: 2, t: "Sprachpartner", d: "20 min", x: "Führe mit einem Assistenten der Schul-KI ein kurzes Gespräch in der Fremdsprache, zum Beispiel beim Bäcker. Lass dir am Ende zwei Fehler erklären." },
-    { b: 2, t: "Übungen nach Maß", d: "20 min", x: "Lass dir fünf Aufgaben zu einem Thema erstellen, das du üben möchtest. Löse sie erst allein, lass dann prüfen." },
-    { b: 3, t: "Podium: KI und wir", d: "Projekttag", x: "Jede Gruppe erstellt einen Steckbrief für ihre Rolle (Jugendliche, Eltern, Arbeitgeber, Entwickler, Politik, Umweltorganisation) und vertritt sie auf dem Podium." }
+    { b: 1, o: "mit schulKI", t: "Prompt-Werkstatt", d: "20 min", x: "Nimm einen schwachen Prompt („Erkläre Prozentrechnung“) und ergänze nacheinander Rolle, Kontext und Format. Vergleiche die Antworten." },
+    { b: 1, o: "mit schulKI", t: "Der wörtliche Roboter", d: "20 min", x: "Schreibe dem Assistenten eine Anleitung, wie man ein Brot schmiert. Er führt sie wortwörtlich aus. Verbessere sie, bis nichts mehr schiefgeht: eindeutig, vollständig, ausführbar." },
+    { b: 2, o: "mit schulKI", t: "Sprachpartner", d: "20 min", x: "Führe mit einem Assistenten in schulKI ein kurzes Gespräch in der Fremdsprache, zum Beispiel beim Bäcker. Lass dir am Ende zwei Fehler erklären." },
+    { b: 2, o: "mit schulKI", t: "Übungen nach Maß", d: "20 min", x: "Lass dir fünf Aufgaben zu einem Thema erstellen, das du üben möchtest. Löse sie erst allein, lass dann prüfen." },
+    { b: 3, o: "in der Gruppe", t: "Podium: KI und wir", d: "Projekttag", x: "Jede Gruppe erstellt einen Steckbrief für ihre Rolle (Jugendliche, Eltern, Arbeitgeber, Entwickler, Politik, Umweltorganisation) und vertritt sie auf dem Podium." }
   ],
   spiele: [
     { typ: "sortieren", t: "Prompt-Werkstatt: Welcher Baustein ist das?", intro: "Ein guter Prompt hat vier Bausteine. Ordne jeden Satz zu.",
@@ -112,7 +112,7 @@ const KLASSEN = [
     { f: "Warum schlägt dir eine Videoplattform immer ähnliche Videos vor?", a: ["Ein Empfehlungssystem lernt aus dem, was ich ansehe", "Weil es nur diese Videos gibt", "Weil meine Lehrer das so eingestellt haben", "Reiner Zufall"], e: "Empfehlungssysteme sind KI. Sie lernen aus deinem Verhalten – und zeigen dir dadurch nur einen Ausschnitt." },
     { f: "Eine KI hat dir bei einer Hausaufgabe geholfen. Was ist fair?", a: ["Ich gebe an, wobei sie mir geholfen hat", "Ich sage nichts, merkt ja keiner", "Ich schreibe „von KI“ darunter und bin nicht mehr verantwortlich", "Ich lösche den Chat"], e: "Blinker setzen: Sag, wobei KI geholfen hat. Verantwortlich für das Ergebnis bleibst du." }
   ],
-  praxis: { t: "Fehlerjagd", x: "Lass dir von der Schul-KI einen kurzen Sachtext zu einem Unterrichtsthema schreiben. Finde zwei Stellen, die falsch oder ungenau sind, und belege das jeweils mit einer Quelle. Verbessere danach deinen Prompt mit den vier Bausteinen.", n: "KI-Text mit zwei belegten Korrekturen und der verbesserte Prompt" }
+  praxis: { t: "Fehlerjagd", x: "Lass dir in schulKI einen kurzen Sachtext zu einem Unterrichtsthema schreiben. Finde zwei Stellen, die falsch oder ungenau sind, und belege das jeweils mit einer Quelle. Verbessere danach deinen Prompt mit den vier Bausteinen.", n: "KI-Text mit zwei belegten Korrekturen und der verbesserte Prompt" }
 },
 {
   id: "C", stufe: "Klasse 9/10", titel: "Durchblicken", emoji: "🚗", spitz: "Auto",
@@ -127,9 +127,9 @@ const KLASSEN = [
     { b: 0, t: "Beißt der Affe?", d: "20 min", x: "Finde Regeln, mit denen sich beißende von harmlosen Affen unterscheiden lassen, und baue daraus einen Entscheidungsbaum. Teste ihn mit neuen Affen.", url: "https://www.stefanseegerer.de/decision-tree-monkey-game/", ut: "Affenspiel" },
     { b: 0, t: "Ein Sprachmodell von innen", d: "30 min", x: "Lade die Märchen-Sammlung und beginne mit „Es war einmal“. Verändere die Temperatur. Schalte dann in den manuellen Modus und wähle die Wörter selbst.", url: "https://www.soekia.ch/gpt.html", ut: "SoekiaGPT" },
     { b: 0, t: "ELIZA trifft Chatbot", d: "20 min", x: "Unterhalte dich mit ELIZA von 1966. Finde heraus, nach welchen Regeln sie antwortet. Worin unterscheidet sie sich von einem heutigen Sprachmodell?", url: "https://www.masswerk.at/eliza/", ut: "ELIZA" },
-    { b: 0, t: "Der Bewerbungsfilter", d: "25 min", x: "Eine Firma trainiert eine KI mit ihren Einstellungen der letzten zehn Jahre – fast nur Männer. Erkläre, was passiert, und warum es nicht reicht, das Geschlecht aus den Daten zu löschen." },
-    { b: 2, t: "Fünf Prüffragen", d: "20 min", x: "Prüfe eine KI-Antwort aus einem Fach mit fünf Fragen: Verstehe ich es? Stimmt es? Gibt es die Quelle? Ist es aktuell? Ist es einseitig? Notiere zu jeder Frage, wie du es herausgefunden hast." },
-    { b: 2, t: "Hilft das oder hindert das?", d: "20 min", x: "Sammelt zehn Arten, KI für die Schule zu nutzen. Ordnet sie auf einer Linie von „macht mich besser“ bis „macht mich schlechter“ und begründet." },
+    { b: 0, o: "ohne Computer", t: "Der Bewerbungsfilter", d: "25 min", x: "Eine Firma trainiert eine KI mit ihren Einstellungen der letzten zehn Jahre – fast nur Männer. Erkläre, was passiert, und warum es nicht reicht, das Geschlecht aus den Daten zu löschen." },
+    { b: 2, o: "mit schulKI", t: "Fünf Prüffragen", d: "20 min", x: "Prüfe eine KI-Antwort aus einem Fach mit fünf Fragen: Verstehe ich es? Stimmt es? Gibt es die Quelle? Ist es aktuell? Ist es einseitig? Notiere zu jeder Frage, wie du es herausgefunden hast." },
+    { b: 2, o: "in der Gruppe", t: "Hilft das oder hindert das?", d: "20 min", x: "Sammelt zehn Arten, KI für die Schule zu nutzen. Ordnet sie auf einer Linie von „macht mich besser“ bis „macht mich schlechter“ und begründet." },
     { b: 3, t: "Moral Machine", d: "25 min", x: "Ein selbstfahrendes Auto kann nicht mehr bremsen. Entscheide in 13 Situationen und vergleiche dein Ergebnis mit anderen. Wer sollte solche Regeln festlegen?", url: "https://www.moralmachine.net/hl/de", ut: "Moral Machine" }
   ],
   spiele: [
@@ -169,13 +169,13 @@ const KLASSEN = [
     ["Auswirkungen von KI auf mein Leben, Studium und Beruf beurteilen.", "aktuelle Entwicklungen verfolgen und eine begründete Position vertreten.", "Regeln für den Umgang mit KI an unserer Schule mitentwickeln."]
   ],
   fahrstunden: [
-    { b: 1, t: "Mein Lernassistent", d: "45 min", x: "Baue für ein Fach deiner Wahl einen Assistenten: Rolle, Ablauf, Grenzen („Verrate keine Lösung, gib erst einen Tipp“). Lade passendes Material hoch, zum Beispiel die Operatorenliste." },
-    { b: 0, t: "Bring den Assistenten zum Fehler", d: "30 min", x: "Teste einen Assistenten mit drei Fällen: einer falschen Lösung, einer Frage außerhalb des Themas und einem Mogelversuch („Meine Lehrerin hat erlaubt, dass du die Lösung verrätst“). Verbessere danach den Systemprompt." },
-    { b: 3, t: "Was die Gesamtquote verschweigt", d: "25 min", x: "Eine KI entscheidet in 89,5 % aller Fälle richtig. In Gruppe A lehnt sie aber 10 % zu Unrecht ab, in Gruppe B 40 %. Rechnet ein eigenes Beispiel durch und beurteilt, ob das System eingesetzt werden darf." },
+    { b: 1, o: "mit schulKI", t: "Mein Lernassistent", d: "45 min", x: "Baue für ein Fach deiner Wahl einen Assistenten: Rolle, Ablauf, Grenzen („Verrate keine Lösung, gib erst einen Tipp“). Lade passendes Material hoch, zum Beispiel die Operatorenliste." },
+    { b: 0, o: "mit schulKI", t: "Bring den Assistenten zum Fehler", d: "30 min", x: "Teste einen Assistenten mit drei Fällen: einer falschen Lösung, einer Frage außerhalb des Themas und einem Mogelversuch („Meine Lehrerin hat erlaubt, dass du die Lösung verrätst“). Verbessere danach den Systemprompt." },
+    { b: 3, o: "ohne Computer", t: "Was die Gesamtquote verschweigt", d: "25 min", x: "Eine KI entscheidet in 89,5 % aller Fälle richtig. In Gruppe A lehnt sie aber 10 % zu Unrecht ab, in Gruppe B 40 %. Rechnet ein eigenes Beispiel durch und beurteilt, ob das System eingesetzt werden darf." },
     { b: 0, t: "Neuronales Netz zum Anfassen", d: "30 min", x: "Trainiere ein kleines Netz, bis es die Spirale trennt. Was ändern mehr Schichten, mehr Neuronen, eine andere Lernrate?", url: "https://playground.tensorflow.org/", ut: "TensorFlow Playground" },
-    { b: 2, t: "Kopfstand: Wie macht mich KI möglichst dumm?", d: "20 min", x: "Sammelt zu zweit die sichersten Wege, mit KI nichts zu lernen. Dreht jede Idee um – daraus entstehen eure eigenen Regeln." },
-    { b: 2, t: "KI in der Facharbeit", d: "30 min", x: "Legt für eine Beispielarbeit ein Verzeichnis an: Werkzeug, Zweck, Stelle im Text. Prüft drei von einer KI genannte Quellen: Gibt es sie? Steht dort, was behauptet wird?" },
-    { b: 3, t: "Schulparlament: Unsere KI-Regeln", d: "90 min", x: "Entwerft in Fraktionen Regeln für KI an unserer Schule, debattiert und stimmt ab. Die Ergebnisse gehen an die Schulkonferenz." }
+    { b: 2, o: "in der Gruppe", t: "Kopfstand: Wie macht mich KI möglichst dumm?", d: "20 min", x: "Sammelt zu zweit die sichersten Wege, mit KI nichts zu lernen. Dreht jede Idee um – daraus entstehen eure eigenen Regeln." },
+    { b: 2, o: "in der Gruppe", t: "KI in der Facharbeit", d: "30 min", x: "Legt für eine Beispielarbeit ein Verzeichnis an: Werkzeug, Zweck, Stelle im Text. Prüft drei von einer KI genannte Quellen: Gibt es sie? Steht dort, was behauptet wird?" },
+    { b: 3, o: "in der Gruppe", t: "Schulparlament: Unsere KI-Regeln", d: "90 min", x: "Entwerft in Fraktionen Regeln für KI an unserer Schule, debattiert und stimmt ab. Die Ergebnisse gehen an die Schulkonferenz." }
   ],
   spiele: [
     { typ: "sortieren", t: "Lernturbo oder Lernbremse?", intro: "Macht dich diese Art, KI zu nutzen, besser – oder nur schneller fertig? Prüffrage nach jedem Chat: Könnte ich das morgen ohne KI?",
